@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Food Demand Forecasting</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      background-color: rgb(5, 4, 4);
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    body {
+ background-image: url("https://media.istockphoto.com/photos/shopping-bag-full-of-fresh-vegetables-and-fruits-picture-id1128687123?k=20&m=1128687123&s=612x612&w=0&h=qEa-vkegksLHETe-zuGsWNqhQQI7VwofTbwSpcaNvrU=");
+ background-color: #cccccc;
+}
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    .right {
+  width: 30%;
+  min-height: 400px;
+  background-color: #7d4f92;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 8px;
+  color: white;
+  margin-left: 180px;
+}
+    footer {
+      background-color: rgb(5, 4, 4);
+      color: white;
+      padding: 15px;
+    }
+    
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/home">Home</a></li>
+        <li><a href="/pred">Pred</a></li>
+        
+        <li><a href="https://www.linkedin.com/in/vikash-kumar-a071a0205/">Reach me</a></li>
+      </ul>
+     
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<form method="POST" action="/predict" class="was-validated text-center">
+
+    <br>
+    <div class="right">
+      <div class="content">
+        <h1>Let's Predict</h1>
+        <p></p>
+        
+  <div class="form-group">
+    <select class="custom-select" id="homepage_featured" name="homepage_featured" required>
+      <option value="" id="homepage_featured" name="homepage_featured">homepage_featured</option>
+      <option value="0" id="homepage_featured" name="homepage_featured">No</option>
+      <option value="1" id="homepage_featured" name="homepage_featured">Yes</option>
+    </select>
+    <div class="invalid-feedback">Homepage Featured</div>
+  </div>
+
+  <div class="form-group">
+  <select class="custom-select" id="emailer_for_promotion" name="emailer_for_promotion" required>
+    <option value="" id="emailer_for_promotion" name="emailer_for_promotion">emailer_for_promotion</option>
+    <option value="0" id="emailer_for_promotion" name="emailer_for_promotion">No</option>
+    <option value="1" id="emailer_for_promotion" name="emailer_for_promotion">Yes</option>
+  </select>
+  <div class="invalid-feedback">Emailer for Promotion</div>
+  </div>
+
+  <div class="form-group">
+    <label for="usr">Op_code</label>
+    <input type="number" class="form-control" id="Op_code" name="Op_code">
+  </div>
+
+  <div class="form-group">
+    <label for="usr">city_code</label>
+    <input type="number" class="form-control" id="city_code" name="city_code">
+  </div>
+
+  <div class="form-group">
+    <label for="usr">region_code</label>
+    <input type="number" class="form-control" id="region_code" name="region_code">
+  </div>
+
+  <div class="form-group">
+    <select class="custom-select" id="cuisine" name="cuisine" required>
+      <option value="" id="cuisine" name="cuisine">cuisine</option>
+      <option value="0" id="cuisine" name="cuisine">Thai</option>
+      <option value="1" id="cuisine" name="cuisine">Indian</option>
+      <option value="2" id="cuisine" name="cuisine">Italian</option>
+      <option value="3" id="cuisine" name="cuisine">Continental</option>
+  </select>
+  <div class="invalid-feedback">Cuisine</div>
+  </div>
+
+  <div class="form-group">
+    <select class="custom-select" id="category" name="category" required>
+      <option value="" id="category" name="category">category</option>
+      <option value="0" id="category" name="category">Beverages</option>
+      <option value="1" id="category" name="category">Extras</option>
+      <option value="2" id="category" name="category">Soup</option>
+      <option value="3" id="category" name="category">Salad</option>
+      <option value="4" id="category" name="category">Rice Bowl</option>
+      <option value="5" id="category" name="category">Other Snacks</option>
+      <option value="6" id="category" name="category">Starters</option>
+      <option value="7" id="category" name="category">Sandwich</option>
+      <option value="8" id="category" name="category">Desert</option>
+      <option value="9" id="category" name="category">Biryani</option>
+      <option value="10" id="category" name="category">Pasta</option>
+      <option value="11" id="category" name="category">Pizza</option>
+      <option value="12" id="category" name="category">Fish</option>
+      <option value="13" id="category" name="category">Seafood</option>
+    </select>
+    <div class="invalid-feedback">Category</div>
+  </div>
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+  </div>
+  <div><p>Prediction is: {{ prediction_text }}</p></div>
+</div>
+
+</div>
+
+  </div>
+  </form>
+
+
+
+<br>
+<footer class="container-fluid text-center">
+  
+<p>Copyright &copy; Vikash Kumar </p>
+  </footer>
+
+</body>
+</html>

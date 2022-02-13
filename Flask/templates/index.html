@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Demand Prediction</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+      <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header{
+    background-color: black;
+    color: white;
+}
+
+nav{
+    display: flex;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    width: 80px;
+}
+
+ul{
+    padding:36px;
+}
+
+li{
+     list-style: none;
+     display: inline;
+     padding: 0 43px;
+}
+
+nav ul li a{
+    color: white;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color:darkgray;
+    font-style: bold;
+}
+footer{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    background-color: black;
+    color: white;
+}
+html {
+  font-family: "Montserrat";
+}
+section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("https://insights.insofe.com/wp-content/uploads/2020/08/Blog-Consulting-1024x576.jpg");
+  background-color: #17a0d6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 50px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: aqua; */
+}
+body {
+ background-image: url("https://smartinternz.com/assets/ibm/images/20945376.jpg");
+ background-color: #cccccc;
+}
+.left {
+  width: 80%;
+  height: 600px;
+background:url()   
+ no-repeat center / cover;
+  border-radius: 8px;
+}
+.right {
+  width: 300%;
+  min-height: 400px;
+  background-color: #8a0e14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 8px;
+  color: white;
+  margin-left: -50px;
+}
+.right h1 {
+  font-size: 40px;
+  font-weight: lighter;
+}
+.right p {
+  margin: 20px 0;
+  font-weight: 500;
+  line-height: 25px;
+}
+.right a {
+  text-decoration: none;
+  text-transform: uppercase;
+  background-color: white;
+  color: black;
+  padding: 20px 30px;
+  display: inline-block;
+  letter-spacing: 2px;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 200%;
+    margin: 0 20px;
+  }
+  .left {
+    width: 0%;
+    height: 400px;
+  }
+  .right {
+    width: 190%;
+    margin: 0;
+    margin-top: -100px;
+  }
+} 
+    </style>
+    </head>
+    <body>
+     <header>
+      <nav>
+      <!-- <div class="logo">
+         <img src="tycoon.png" alt="tycoon.jpg" style="width: 80px;">
+      </div> -->
+         <ul>
+              <li> <a href="">Home</a></li>
+                <!-- <li><a href="https://www.linkedin.com/company/team-tycoon-soft-skills/">About</a></li> -->
+                
+              <li><a href="/pred">Pred</a></li>
+                <li><a href="https://www.linkedin.com/in/vikash-kumar-a071a0205/">Reach me</a></li>
+            </ul>
+      </nav>
+    </header>
+    <section>
+  <div class="container">
+    <div class="left"></div>
+    <div class="right">
+      <div class="content">
+        <h1>Food Demand Forecasting For Food Delivery Company Using IBM Cloud</h1>
+        <p>A food delivery service has to deal with a lot of perishable raw materials which makes it all, the most important factor for such a company is to accurately forecast daily and weekly demand. Too much inventory in the warehouse means more risk of wastage, and not enough could lead to out-of-stocks - and push customers to seek solutions from your competitors. The replenishment of majority of raw materials is done on weekly basis and since the raw material is perishable, the procurement planning is of utmost importance, the task is to predict the demand for the next 10 weeks.
+<br>
+          The main aim of this project is to create an appropriate machine learning model to forecast then number of orders to gather raw materials for next ten weeks. To achieve this, we should know the information about of fulfilment center like area, city etc., and meal information like category of food sub category of food price of the food or discount in particular week. By using this data, we can use any classification algorithm to forecast the quantity for 10 weeks. A web application is built which is integrated with the model built.</p>
+        <a href="https://smartinternz.com/ibm-build-a-thon-2021" class="btn">More Info</a>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+<footer class="flex-all-center">
+<p>Copyright &copy; Vikash Kumar </p>
+</html>
